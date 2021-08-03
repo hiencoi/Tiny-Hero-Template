@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6181929295598768118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2890474109465287813}
+  - component: {fileID: 6814084288310270165}
+  m_Layer: 0
+  m_Name: Mission_03_Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2890474109465287813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181929295598768118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6814084288310270165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181929295598768118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09dc3c78152975439d0343625979654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1582631819376756974569
+  map: {fileID: 2069772338087468366, guid: 80b021619318c4246be81c8705548900, type: 3}
+  spawnState: 0
+  wavesLength: 0
+  forcedWave: 0
+  currentWave: 0
+  playWave: 0
+  playOnStart: 1
+  restart: 0
+  timeBeforeFirstWave: 0
+  timeBetweenWaves: 0
+  waves:
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 00000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 158027995529191440183
+        spawnMessage: []
+      - repeat: 2
+        _repeat: 2
+        isRandom: 1
+        objects:
+        - 1581753328850861271610
+        - 1581753318873830942034
+        spawnMessage: []
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 1578129949:386305:295837
+        - 158027980012837537906
+        - 15802798148040492466
+        spawnMessage:
+        - message: HealthUp
+          parameter: 10
+        - message: DamageUp
+          parameter: 2
+        - message: BonusesUp
+          parameter: 5
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 1

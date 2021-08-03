@@ -1,0 +1,670 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4812351305252823535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6369575250509605350}
+  - component: {fileID: 7292415223879646290}
+  m_Layer: 0
+  m_Name: Mission_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6369575250509605350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812351305252823535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7292415223879646290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812351305252823535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09dc3c78152975439d0343625979654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1583135287610912945854
+  map: {fileID: 8797633831564555788, guid: 3a4739318bb113846a933f09b30e7d0c, type: 3}
+  spawnState: 0
+  wavesLength: 0
+  forcedWave: 0
+  currentWave: 0
+  playWave: 0
+  playOnStart: 1
+  restart: 0
+  timeBeforeFirstWave: 0
+  timeBetweenWaves: 0
+  waves:
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 1580279849590217263699
+        - 158027983231909569345
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 15802799956131480538
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 1581753400368694819714
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 1581753403437646699027
+        spawnMessage: []
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 1580279849590217263699
+        - 1580279807346197464409
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 1580279849590217263699
+        - 158027983231909569345
+        - 1580279854759988804949
+        spawnMessage: []
+      - repeat: 5
+        _repeat: 5
+        isRandom: 0
+        objects:
+        - 1580101390172707433461
+        spawnMessage: []
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 158027980012837537906
+        - 1580279807346197464409
+        - 158027985982883709706
+        - 158027989191935165880
+        spawnMessage:
+        - message: HealthUp
+          parameter: 30
+        - message: DamageUp
+          parameter: 3
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 2
+        _repeat: 2
+        isRandom: 1
+        objects:
+        - 1581753402278455233926
+        - 1581753403437646699027
+        - 1581753405103038907423
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 158028000432919168964
+        spawnMessage: []
+      - repeat: 15
+        _repeat: 15
+        isRandom: 1
+        objects:
+        - 1580279849590217263699
+        - 1580279854759988804949
+        - 158027983231909569345
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 3
+    _length: 3
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 0
+      _rate: 0
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 1
+        _repeat: 1
+        isRandom: 1
+        objects:
+        - 1580279984347348667940
+        - 15802799956131480538
+        - 158028000432919168964
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 4
+        _repeat: 4
+        isRandom: 1
+        objects:
+        - 158027995529191440183
+        - 1580279969909322213808
+        - 1580279976666213644156
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 3
+    _length: 3
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 158027988228595403586
+        - 1580279836730775250544
+        - 158027980012837537906
+        - 158027985982883709706
+        spawnMessage:
+        - message: HealthUp
+          parameter: 30
+        - message: DamageUp
+          parameter: 3
+      - repeat: 3
+        _repeat: 3
+        isRandom: 0
+        objects:
+        - 1580279827402732423304
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 1
+        objects:
+        - 15802799956131480538
+        spawnMessage: []
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 1580279854759988804949
+        - 1580279866575782790422
+        - 1580279873543502249603
+        spawnMessage: []
+      - repeat: 3
+        _repeat: 3
+        isRandom: 1
+        objects:
+        - 1581753405103038907423
+        - 1581753403437646699027
+        - 1581753400368694819714
+        spawnMessage: []
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 1580279827402732423304
+        - 158027983231909569345
+        - 1580279873543502249603
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 3
+        _repeat: 3
+        isRandom: 1
+        objects:
+        - 1581753403437646699027
+        - 1581753405103038907423
+        spawnMessage: []
+      - repeat: 5
+        _repeat: 5
+        isRandom: 0
+        objects:
+        - 1580279827402732423304
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 158028000432919168964
+        spawnMessage: []
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 1580279849590217263699
+        - 1580279866575782790422
+        - 1580279873543502249603
+        - 1580279854759988804949
+        spawnMessage: []
+      - repeat: 1
+        _repeat: 1
+        isRandom: 0
+        objects:
+        - 158028000432919168964
+        spawnMessage: []
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 158027985982883709706
+        - 158027989191935165880
+        - 15802798148040492466
+        - 1580279836730775250544
+        spawnMessage:
+        - message: HealthUp
+          parameter: 30
+        - message: DamageUp
+          parameter: 3
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 1
+      _rate: 1
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 2
+        _repeat: 2
+        isRandom: 1
+        objects:
+        - 1581753405103038907423
+        - 1581753403437646699027
+        - 1581753402278455233926
+        - 1581753400368694819714
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 5
+      _rate: 5
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 1580279969909322213808
+        - 158027995529191440183
+        - 1580279976666213644156
+        spawnMessage:
+        - message: HealthUp
+          parameter: 100
+        - message: DamageUp
+          parameter: 5
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 1
+      _rate: 1
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 4
+        _repeat: 4
+        isRandom: 1
+        objects:
+        - 1581753400368694819714
+        - 1581753402278455233926
+        - 1581753403437646699027
+        - 1581753405103038907423
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 1580279827402732423304
+        - 158027983231909569345
+        - 1580279849590217263699
+        - 1580279854759988804949
+        - 1580279866575782790422
+        - 1580279873543502249603
+        spawnMessage: []
+      - repeat: 2
+        _repeat: 2
+        isRandom: 1
+        objects:
+        - 158028000432919168964
+        - 15802799956131480538
+        - 1580279984347348667940
+        spawnMessage: []
+      - repeat: 10
+        _repeat: 10
+        isRandom: 1
+        objects:
+        - 1580101390172707433461
+        - 1580279807346197464409
+        - 1580279819273988171671
+        - 1580279836730775250544
+        - 158027985982883709706
+        - 158027988228595403586
+        - 158027989191935165880
+        spawnMessage:
+        - message: HealthUp
+          parameter: 30
+        - message: DamageUp
+          parameter: 3
+      - repeat: 3
+        _repeat: 3
+        isRandom: 1
+        objects:
+        - 158027995529191440183
+        - 1580279969909322213808
+        - 1580279976666213644156
+        spawnMessage:
+        - message: HealthUp
+          parameter: 100
+        - message: DamageUp
+          parameter: 5
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 1
+      _rate: 1
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 5
+        _repeat: 5
+        isRandom: 1
+        objects:
+        - 1581753403437646699027
+        - 1581753402278455233926
+        - 1581753400368694819714
+        - 1581753405103038907423
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 3
+      _rate: 3
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 25
+        _repeat: 25
+        isRandom: 1
+        objects:
+        - 1580279873543502249603
+        - 1580279827402732423304
+        - 158027980012837537906
+        - 1580279836730775250544
+        - 1580279819273988171671
+        - 1580101390172707433461
+        - 1580279854759988804949
+        - 1580279849590217263699
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0
+  - type: 1
+    length: 10
+    _length: 10
+    stranglers: 1
+    spawners:
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 0
+      _rate: 0
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 1
+        _repeat: 1
+        isRandom: 1
+        objects:
+        - 1580279984347348667940
+        - 15802799956131480538
+        - 158028000432919168964
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    - type: 0
+      complete: 0
+      endless: 0
+      rate: 10
+      _rate: 10
+      isRandom: 1
+      spawnPointIdxs: 0000000001000000
+      initDelay: 0
+      _initDelay: 0
+      enemyIndex: 0
+      _enemyIndex: 0
+      enemies:
+      - repeat: 14
+        _repeat: 14
+        isRandom: 1
+        objects:
+        - 1580279984347348667940
+        - 15802799956131480538
+        - 158028000432919168964
+        spawnMessage: []
+      enemiesTotal: 0
+      enemiesKilled: 0
+      spawned: 0
+    spawnerEnemiesTotal: 0
+    spawnerEnemiesKilled: 0
+    isBossWave: 0

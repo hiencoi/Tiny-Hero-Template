@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: 1f381867f41611e4ab9de0ed1c1c8355
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6302484458593779161
+    second: PlayerGuns_0
+  - first:
+      213: 3180107830246118705
+    second: PlayerGuns_1
+  - first:
+      213: -2505509253870252900
+    second: PlayerGuns_2
+  - first:
+      213: -3959104295864409319
+    second: PlayerGuns_3
+  - first:
+      213: -1760429870587394504
+    second: PlayerGuns_4
+  - first:
+      213: 232848129452337663
+    second: PlayerGuns_5
+  - first:
+      213: -9049410054318161131
+    second: PlayerGuns_6
+  - first:
+      213: 6575518265460696621
+    second: PlayerGuns_7
+  - first:
+      213: -8572506467329908321
+    second: PlayerGuns_8
+  - first:
+      213: 6288721395506436109
+    second: PlayerGuns_9
+  - first:
+      213: 8581380610620575740
+    second: PlayerGuns_10
+  - first:
+      213: 9215754982069774297
+    second: PlayerGuns_11
+  - first:
+      213: -6452855389055754204
+    second: PlayerGuns_12
+  - first:
+      213: 6879118450950661895
+    second: Pistol
+  - first:
+      213: -1898065178660533048
+    second: Pistol Silenced
+  - first:
+      213: -5737340078313841079
+    second: Shotgun
+  - first:
+      213: 4827030598691977101
+    second: Shotgun
+  - first:
+      213: -1276914977702293978
+    second: Ar
+  - first:
+      213: 2353504299449603811
+    second: Machine Silenced
+  - first:
+      213: -1496922236697126485
+    second: Gun_6
+  - first:
+      213: 6214890466697876401
+    second: Gun_7
+  - first:
+      213: -9181343038567105418
+    second: Gun_8
+  - first:
+      213: 4428632552183863584
+    second: Gun_9
+  - first:
+      213: -7033597425203453102
+    second: Gun_10
+  - first:
+      213: -1320550855944381476
+    second: Gun_11
+  - first:
+      213: 1511800733259580831
+    second: Gun_12
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pistol
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 290
+        width: 116
+        height: 65
+      alignment: 9
+      pivot: {x: 0.21028176, y: 0.5947895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a64eb673eff3249a9e73e78241a365
+      internalID: 6879118450950661895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol Silenced
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 302
+        width: 177
+        height: 53
+      alignment: 9
+      pivot: {x: 0.08861115, y: 0.5845464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995c828cbad270e45a3ead774d6390ec
+      internalID: -1898065178660533048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Revoler Pistol
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 286
+        width: 119
+        height: 69
+      alignment: 9
+      pivot: {x: 0.25053394, y: 0.62176555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c4734472cb3b64caff19bbe4f7a5a3
+      internalID: -5737340078313841079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 208
+        width: 236
+        height: 40
+      alignment: 9
+      pivot: {x: 0.23417948, y: 0.514003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13853691f0383f646b0027bfedb61d18
+      internalID: 4827030598691977101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ar
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 99
+        width: 243
+        height: 68
+      alignment: 9
+      pivot: {x: 0.3086827, y: 0.5988453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e933145426cc249ac2e9628dbb751c
+      internalID: -1276914977702293978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Machine Silenced
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 8
+        width: 213
+        height: 62
+      alignment: 9
+      pivot: {x: 0.34484893, y: 0.4186918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50b7c58b3a907c448451f25954c0637
+      internalID: 2353504299449603811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

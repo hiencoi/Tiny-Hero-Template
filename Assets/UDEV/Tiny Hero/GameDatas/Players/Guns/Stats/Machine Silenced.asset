@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5809979c6b28184bbdcb6e483b2fa45, type: 3}
+  m_Name: Machine Silenced
+  m_EditorClassIdentifier: 
+  damage:
+    baseValue: 5
+  ammo:
+    baseValue: 40
+  reloadTime:
+    baseValue: 8
+  maxLevel: 10
+  level: 1
+  upPrice: 1000
+  upPriceUp: 2000
+  damageUp: 0.3
+  ammoUp: 10
+  reloadTimeUp: 0.1

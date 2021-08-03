@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3764530434945279229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7748702527566506383}
+  - component: {fileID: 4566095213263889661}
+  m_Layer: 0
+  m_Name: FreezeEnemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7748702527566506383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764530434945279229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4566095213263889661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764530434945279229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9a284e5902dd64cbc2f960c682bf39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: FREEZE ENEMIES
+  id: 1578195327321910302904
+  hudIcon: {fileID: 21300000, guid: aced71b208cf548448f79b2c03211ac9, type: 3}
+  isPassive: 0
+  animatorState:
+    name: None
+    clipName: 
+    layerIndex: 0
+  timeTrigger: 0
+  desctiption: Freeze all enemy a while.
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCoolDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCoolDownEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  isUnlocked: 0
+  stats: {fileID: 11400000, guid: ca36e73692e720d47931c228478bf529, type: 2}
+  beepSound: {fileID: 8300000, guid: e6f9285a164d4454db1cc0f50ea55d16, type: 3}

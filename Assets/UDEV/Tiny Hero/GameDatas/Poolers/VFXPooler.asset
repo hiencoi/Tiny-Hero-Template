@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a461b204652c724b8f5ab96761b9107, type: 3}
+  m_Name: VFXPooler
+  m_EditorClassIdentifier: 
+  id: 1578195397806014756251
+  target: 4
+  categories:
+  - name: Common
+    id: 1575953473:80685:311427
+  - name: Player
+    id: 1579188157554063942660
+  pools:
+  - poolName: BloodExplosion
+    id: 1575953546:123669:285910
+    pooledObjects: []
+    prefab: {fileID: 149344, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1575953473:80685:311427
+  - poolName: NukeExplosion
+    id: 1579168330838625321524
+    pooledObjects: []
+    prefab: {fileID: 130346, guid: 07bf9ced87963e24299c2c2a22bfeeb6, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1575953473:80685:311427
+  - poolName: DeathSoul
+    id: 1579182082253298315195
+    pooledObjects: []
+    prefab: {fileID: 2946497598777818365, guid: c662fd014ec4e5f4ca8f37c07989a209,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1575953473:80685:311427
+  - poolName: PowerUp
+    id: 157918816483684837051
+    pooledObjects: []
+    prefab: {fileID: 1248736281139622, guid: 41ad67e6e3369424f9eca9a5b78c1b28, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579188157554063942660
+  - poolName: Revive
+    id: 1579189665689549646816
+    pooledObjects: []
+    prefab: {fileID: 1239336398086924, guid: 5ba8f2d925f1524478767c70b59c30e4, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579188157554063942660
+  - poolName: LevelUp
+    id: 1579189857959162605609
+    pooledObjects: []
+    prefab: {fileID: 1383743359667574, guid: b00d6a5afa6cfe8409f6e6800b846a19, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579188157554063942660
+  - poolName: Death
+    id: 157922620011060139834
+    pooledObjects: []
+    prefab: {fileID: 149344, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579188157554063942660
+  - poolName: SmokePuff
+    id: 158009473595488486226
+    pooledObjects: []
+    prefab: {fileID: 100004, guid: 9a11d672c46ec404e9f5cefad3c1102e, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1575953473:80685:311427
+  - poolName: LandDust
+    id: 1580355706486615162610
+    pooledObjects:
+    - {fileID: 0}
+    prefab: {fileID: 2053826189754202364, guid: acd1261704ffc0445b04acd6861b6c98,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579188157554063942660
+  - poolName: RoundFireExplosion
+    id: 1580482154524004621784
+    pooledObjects: []
+    prefab: {fileID: 105310, guid: e6ea0c2b13012484ba2f5dc1054e6d75, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1575953473:80685:311427

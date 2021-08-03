@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a461b204652c724b8f5ab96761b9107, type: 3}
+  m_Name: Collectables
+  m_EditorClassIdentifier: 
+  id: 157931265642179537110
+  target: 5
+  categories:
+  - name: Common
+    id: 1579312673313111166030
+  - name: Rare
+    id: 157931268049402351048
+  - name: Epic
+    id: 1579312686477736164462
+  pools:
+  - poolName: Coin
+    id: 1579312694344707217996
+    pooledObjects: []
+    prefab: {fileID: 1512546809035930, guid: 08c9761fa28ff8c4aa208089867cd8f1, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579312673313111166030
+  - poolName: Diamond
+    id: 157931271333635524064
+    pooledObjects: []
+    prefab: {fileID: 1820303146104128, guid: eab5e7830575c0a44a246ffd3a9d71a5, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 157931268049402351048
+  - poolName: HealthPotion
+    id: 1579312728605697225577
+    pooledObjects: []
+    prefab: {fileID: 1512546809035930, guid: 841c084bcaef6054dbc3cdf37cd70529, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 157931268049402351048
+  - poolName: Life
+    id: 1579347656320349825380
+    pooledObjects: []
+    prefab: {fileID: 1705285703463582, guid: 5a240d0158bc5314ba074b53e5101c67, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579312686477736164462
+  - poolName: Coins Treaseure_100
+    id: 1579347668661051722640
+    pooledObjects: []
+    prefab: {fileID: 1751058808417898, guid: 0a4b8d540ab870e44a940d97c4d6607d, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579312686477736164462
+  - poolName: Coins Treaseure_500
+    id: 1579347701638816946016
+    pooledObjects: []
+    prefab: {fileID: 1751058808417898, guid: 42d266748e130304d99952f45612c1c0, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579312686477736164462
+  - poolName: Coins Treaseure_1000
+    id: 157934771264215135422
+    pooledObjects: []
+    prefab: {fileID: 1751058808417898, guid: 4b311c83c2dd54941b911a223aea56ab, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1579312686477736164462

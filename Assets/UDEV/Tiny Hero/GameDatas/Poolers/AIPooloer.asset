@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a461b204652c724b8f5ab96761b9107, type: 3}
+  m_Name: AIPooloer
+  m_EditorClassIdentifier: 
+  id: 1578195413335688221712
+  target: 2
+  categories:
+  - name: Common
+    id: 157819540556578624561
+  pools:
+  - poolName: HealthBar
+    id: 1578117906:477246:99816
+    pooledObjects: []
+    prefab: {fileID: 1697352093201180, guid: ea3e530ca66cc65418e5141264d3f1d0, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1578117902:97248:278472
+  - poolName: HealthBar
+    id: 1578286636560012468683
+    pooledObjects:
+    - {fileID: 0}
+    prefab: {fileID: 1697352093201180, guid: ea3e530ca66cc65418e5141264d3f1d0, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 157819540556578624561

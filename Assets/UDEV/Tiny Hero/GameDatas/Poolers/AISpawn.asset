@@ -1,0 +1,323 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a461b204652c724b8f5ab96761b9107, type: 3}
+  m_Name: AISpawn
+  m_EditorClassIdentifier: 
+  id: 15781954345983662226
+  target: 3
+  categories:
+  - name: On Ground/Weak
+    id: 1581128522752177428978
+  - name: On Ground/Strong
+    id: 1581128534211910512575
+  - name: On Ground/Great
+    id: 1581128544819601866716
+  - name: On Ground/Boss/Weak
+    id: 1581129630463286536398
+  - name: On Ground/Boss/Strong
+    id: 1581129653998015972456
+  - name: On Ground/Boss/Great
+    id: 1581129660805293866245
+  - name: OnAir/Weak
+    id: 158175325280612276194
+  - name: OnAir/Strong
+    id: 158175326418956844445
+  - name: OnAir/Great
+    id: 1581753270483633826753
+  pools:
+  - poolName: 01
+    id: 1578129949:386305:295837
+    pooledObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    prefab: {fileID: 4772488799284748098, guid: 1f4fafb77de1cd841a22f70a6f1219e1,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128522752177428978
+  - poolName: 01
+    id: 1580101390172707433461
+    pooledObjects: []
+    prefab: {fileID: 507703769943374820, guid: da06d3154ecd5f243bed541c1e3d0cd8, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 02
+    id: 158027980012837537906
+    pooledObjects: []
+    prefab: {fileID: 4921558491690646205, guid: 35af91d7375f70e47b07c288e4c5aadf,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128522752177428978
+  - poolName: 02
+    id: 1580279807346197464409
+    pooledObjects: []
+    prefab: {fileID: 3409133363837606211, guid: 32daf56adb817b347a6724fe11b3cbed,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 03
+    id: 15802798148040492466
+    pooledObjects: []
+    prefab: {fileID: 6269416615640097064, guid: bd6a67ac37fdab14daa7aec224cf50e4,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128522752177428978
+  - poolName: 03
+    id: 1580279819273988171671
+    pooledObjects: []
+    prefab: {fileID: 8886681003822835588, guid: 8318791c51ad5fe42b6dee1d27b7ae5d,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 01
+    id: 1580279827402732423304
+    pooledObjects: []
+    prefab: {fileID: 4229754711174894353, guid: 6758836cfcf866645aca46b3593fae5b,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128544819601866716
+  - poolName: 02
+    id: 158027983231909569345
+    pooledObjects: []
+    prefab: {fileID: 2991159924599833113, guid: f9cad6a431bc17545b8a6e096d5adae1,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128544819601866716
+  - poolName: 04
+    id: 1580279836730775250544
+    pooledObjects: []
+    prefab: {fileID: 6873506471949109828, guid: d344cc911884e864087997aa19869209,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 03
+    id: 1580279849590217263699
+    pooledObjects: []
+    prefab: {fileID: 2390678069570442758, guid: ec7138fb0043bf24aab96355f046dbde,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128544819601866716
+  - poolName: 04
+    id: 1580279854759988804949
+    pooledObjects: []
+    prefab: {fileID: 7863397568733788220, guid: 234539aad5609f240913562881ee1808,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128544819601866716
+  - poolName: 05
+    id: 158027985982883709706
+    pooledObjects: []
+    prefab: {fileID: 6088174194171473042, guid: 8803689017436c24f87904c15af8c10b,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 05
+    id: 1580279866575782790422
+    pooledObjects: []
+    prefab: {fileID: 7993899637261144352, guid: 0c06c8cc4ec7a9e4cbeae7a026b5000d,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128544819601866716
+  - poolName: 06
+    id: 1580279873543502249603
+    pooledObjects: []
+    prefab: {fileID: 5847767389091524463, guid: df1ed03e6af77b94eb087a2587ed655e,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128544819601866716
+  - poolName: 06
+    id: 158027988228595403586
+    pooledObjects: []
+    prefab: {fileID: 3191685401370173664, guid: e18cb4aa772056949bbeb772e18941a3,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 07
+    id: 158027989191935165880
+    pooledObjects: []
+    prefab: {fileID: 6361395292383309417, guid: be15a7c95144cb24498fd234024ba875,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581128534211910512575
+  - poolName: 01
+    id: 158027995529191440183
+    pooledObjects: []
+    prefab: {fileID: 7101967765378279795, guid: 3b4a2af7baac3b34686429c3133405f6,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129630463286536398
+  - poolName: 02
+    id: 1580279969909322213808
+    pooledObjects: []
+    prefab: {fileID: 8760146850841935135, guid: bbae32d3994295f448d8b03629ecffed,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129630463286536398
+  - poolName: 03
+    id: 1580279976666213644156
+    pooledObjects: []
+    prefab: {fileID: 20329207194588328, guid: 30cb7ba459ccdfa4dba616146f55424f, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129630463286536398
+  - poolName: 01
+    id: 1580279984347348667940
+    pooledObjects: []
+    prefab: {fileID: 3987430631779217134, guid: d1e48c7b616a75641a181ebf6d61a3f3,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129653998015972456
+  - poolName: 02
+    id: 15802799956131480538
+    pooledObjects: []
+    prefab: {fileID: 8638201466042219462, guid: 71d585b7b1c63884c9c0abaff912e045,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129653998015972456
+  - poolName: 03
+    id: 158028000432919168964
+    pooledObjects: []
+    prefab: {fileID: 3091395468653831212, guid: 6860791744dcdd14abfd9e98d3160e4a,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129653998015972456
+  - poolName: 01
+    id: 1580280007325529418889
+    pooledObjects: []
+    prefab: {fileID: 2565748798156279827, guid: dd4232ce0fb74ee4da49c85d085e120c,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129660805293866245
+  - poolName: 02
+    id: 1580280031616073392604
+    pooledObjects: []
+    prefab: {fileID: 2286555930749572767, guid: e37d1d6ffd2f746458c0fce3a1e341a8,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129660805293866245
+  - poolName: 03
+    id: 15802800566870574855
+    pooledObjects: []
+    prefab: {fileID: 3574062234632564500, guid: af026666f3230ef4ab2caaba082a74a3,
+      type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581129660805293866245
+  - poolName: 01
+    id: 1581753281621464706327
+    pooledObjects: []
+    prefab: {fileID: 1714044505348266, guid: da7481138276f3c4a8155ab76936dd0e, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175325280612276194
+  - poolName: 02
+    id: 1581753318873830942034
+    pooledObjects: []
+    prefab: {fileID: 1280078683201404, guid: 8ec3ff529d2200e4897bdf3a5f53340c, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175325280612276194
+  - poolName: 03
+    id: 1581753328850861271610
+    pooledObjects: []
+    prefab: {fileID: 1146150701977312, guid: ad13a163d3a39994b8834163b4b3293e, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175325280612276194
+  - poolName: 04
+    id: 1581753336868882801766
+    pooledObjects: []
+    prefab: {fileID: 1454467619041992, guid: 5ab2677045e2eea4ba8c58408592e292, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175325280612276194
+  - poolName: 01
+    id: 1581753366488241928624
+    pooledObjects: []
+    prefab: {fileID: 1714044505348266, guid: 788c7e862e6c7384db71aa36036ab913, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175326418956844445
+  - poolName: 02
+    id: 1581753373299936559223
+    pooledObjects: []
+    prefab: {fileID: 1280078683201404, guid: 3333e40dc1f19e04590ad04e6d90aa71, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175326418956844445
+  - poolName: 03
+    id: 1581753375651535701399
+    pooledObjects: []
+    prefab: {fileID: 1146150701977312, guid: 909f60cb49760b143a2b8d5778035692, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175326418956844445
+  - poolName: 04
+    id: 1581753376868111114112
+    pooledObjects: []
+    prefab: {fileID: 1454467619041992, guid: ecad51670a0bd2b47929730c16f7c428, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 158175326418956844445
+  - poolName: 01
+    id: 1581753400368694819714
+    pooledObjects: []
+    prefab: {fileID: 1714044505348266, guid: 576e2586b23af16408486901d0f391d7, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581753270483633826753
+  - poolName: 02
+    id: 1581753402278455233926
+    pooledObjects: []
+    prefab: {fileID: 1280078683201404, guid: ff39a678176e3a44b8255c2d4fc37c6c, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581753270483633826753
+  - poolName: 03
+    id: 1581753403437646699027
+    pooledObjects: []
+    prefab: {fileID: 1146150701977312, guid: 202ba3d2254646443956891d31038d5c, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581753270483633826753
+  - poolName: 04
+    id: 1581753405103038907423
+    pooledObjects: []
+    prefab: {fileID: 1454467619041992, guid: fe607f5d5273a0e4c92a875256722341, type: 3}
+    startingParent: {fileID: 0}
+    startingQuantity: 0
+    category: 1581753270483633826753
