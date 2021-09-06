@@ -85,9 +85,9 @@ namespace UDEV
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = config.androidBanner.Trim();
+        string adUnitId = config.admob.androidBanner.Trim();
 #elif UNITY_IPHONE
-        string adUnitId = config.iosBanner.Trim();
+        string adUnitId = config.admob.iosBanner.Trim();
 #else
         string adUnitId = "unexpected_platform";
 #endif
@@ -117,9 +117,9 @@ namespace UDEV
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = config.androidInterstitial.Trim();
+        string adUnitId = config.admob.androidInterstitial.Trim();
 #elif UNITY_IPHONE
-        string adUnitId = config.iosInterstitial.Trim();
+        string adUnitId = config.admob.iosInterstitial.Trim();
 #else
         string adUnitId = "unexpected_platform";
 #endif
@@ -142,10 +142,10 @@ namespace UDEV
 #if UNITY_EDITOR
                 RequestInterstitial();
 #elif UNITY_ANDROID
-                if (string.Compare(adUnitId, config.androidInterstitial.Trim()) == 0)
+                if (string.Compare(adUnitId, config.admob.androidInterstitial.Trim()) == 0)
                     RequestInterstitial();
 #elif UNITY_IPHONE
-                if (string.Compare(adUnitId, config.iosInterstitial.Trim()) == 0)
+                if (string.Compare(adUnitId, config.admob.iosInterstitial.Trim()) == 0)
                     RequestInterstitial();
 #else
                 RequestInterstitial();
@@ -161,9 +161,9 @@ namespace UDEV
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = config.androidRewarded.Trim();
+        string adUnitId = config.admob.androidRewarded.Trim();
 #elif UNITY_IPHONE
-        string adUnitId = config.iosRewarded.Trim();
+        string adUnitId = config.admob.iosRewarded.Trim();
 #else
         string adUnitId = "unexpected_platform";
 #endif
@@ -184,15 +184,11 @@ namespace UDEV
                 RequestInterstitial();
                 RequestRewardedVideo();
 #elif UNITY_ANDROID
-                if (string.Compare(adUnitId, config.androidRewarded.Trim()) == 0)
+                if (string.Compare(adUnitId, config.admob.androidRewarded.Trim()) == 0)
                     RequestRewardedVideo();
-                else if (string.Compare(adUnitId, config.androidInterstitial.Trim()) == 0)
-                    RequestInterstitial();
 #elif UNITY_IPHONE
-                if (string.Compare(adUnitId, config.iosRewarded.Trim()) == 0)
+                if (string.Compare(adUnitId, config.admob.iosRewarded.Trim()) == 0)
                     RequestRewardedVideo();
-                else if (string.Compare(adUnitId, config.iosInterstitial.Trim()) == 0)
-                    RequestInterstitial();
 #else
                 RequestRewardedVideo();
 #endif
