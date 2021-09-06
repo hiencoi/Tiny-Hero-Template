@@ -470,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -630,7 +631,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
-  rewardedCallback: {fileID: 0}
+  rewardedCallback: {fileID: 973357725}
+  config:
+    admob:
+      androidAppId: 
+      iosAppId: 
+      androidInterstitial: 
+      iosInterstitial: 
+      androidBanner: 
+      iosBanner: 
+      androidRewarded: 
+      iosRewarded: 
+    adPeriod: 0
+    rewardedVideoPeriod: 0
+    rewardedVideoAmount: 0
+    androidPackageID: 
+    facebookPageID: 
+    startingCoins: 0
+    dailyGiftCoins: 0
+    coinsForRateGame: 0
+  OnAdLoadedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAdFailedToLoadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAdOpeningEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAdFailedToShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUserEarnedRewardEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAdClosedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  showFpsMeter: 1
 --- !u!4 &973357724
 Transform:
   m_ObjectHideFlags: 0
@@ -844,6 +882,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1174258909
 Canvas:
   m_ObjectHideFlags: 0
@@ -1019,6 +1058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

@@ -22,7 +22,7 @@ namespace UDEV.TinyHero
         public void GetExtraLife()
         {
             AdmobController.Ins.rewardedCallback.rewardType = RewardType.LIFE;
-            AdmobController.Ins.ShowRewardBasedVideo();
+            AdmobController.Ins.ShowRewardedVideo();
         }
     }
 }

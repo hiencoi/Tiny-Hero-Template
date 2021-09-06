@@ -36,7 +36,7 @@ namespace UDEV.TinyHero
         {
             AdmobController.Ins.rewardedCallback.rewardType = RewardType.COIN;
             AdmobController.Ins.rewardedCallback.CoinsReward = m_treasure.CoinsReward;
-            AdmobController.Ins.ShowRewardBasedVideo();
+            AdmobController.Ins.ShowRewardedVideo();
         }
     }
 }

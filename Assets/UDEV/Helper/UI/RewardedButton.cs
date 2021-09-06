@@ -38,10 +38,8 @@ namespace UDEV {
 
         private void AddEvents()
         {
-            if (AdmobController.Ins.rewardBasedVideo != null)
-            {
-                AdmobController.Ins.rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
-            }
+            AdmobController admobController = AdmobController.Ins;
+            admobController.OnUserEarnedRewardEvent.AddListener(() => AdmobHandleRewardBasedVideoRewarded(this, null));
         }
 
         private void IUpdate()
@@ -52,7 +50,7 @@ namespace UDEV {
 
         public void OnClick()
         {
-            AdmobController.Ins.ShowRewardBasedVideo();
+            AdmobController.Ins.ShowRewardedVideo();
         }
 
         private void ShowTimerText(int time)
@@ -65,7 +63,7 @@ namespace UDEV {
             }
         }
 
-        public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+        public void AdmobHandleRewardBasedVideoRewarded(object sender, Reward args)
         {
             content.SetActive(false);
             ShowTimerText(ConfigController.Ins.config.rewardedVideoPeriod);
@@ -92,18 +90,15 @@ namespace UDEV {
 
         private bool IsAdAvailable()
         {
-            if (AdmobController.Ins.rewardBasedVideo == null) return false;
-            bool isLoaded = AdmobController.Ins.rewardBasedVideo.IsLoaded();
+            bool isLoaded = AdmobController.Ins.rewardedAd.IsLoaded();
             return isLoaded;
         }
 
         private void OnDestroy()
         {
 #if UNITY_ANDROID || UNITY_IOS
-        if (AdmobController.Ins.rewardBasedVideo != null)
-        {
-            AdmobController.Ins.rewardBasedVideo.OnAdRewarded -= HandleRewardBasedVideoRewarded;
-        }
+            AdmobController admobController = AdmobController.Ins;
+            admobController.OnUserEarnedRewardEvent.RemoveListener(() => AdmobHandleRewardBasedVideoRewarded(this, null));
 #endif
         }
 

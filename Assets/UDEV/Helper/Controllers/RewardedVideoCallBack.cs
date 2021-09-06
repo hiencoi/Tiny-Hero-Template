@@ -26,15 +26,13 @@ namespace UDEV
         private void AddEvents()
         {
 #if UNITY_ANDROID || UNITY_IOS
-        if (AdmobController.Ins.rewardBasedVideo != null)
-        {
-            AdmobController.Ins.rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
-        }
+            AdmobController admobController = AdmobController.Ins;
+            admobController.OnUserEarnedRewardEvent.AddListener(() => AdmobHandleRewardBasedVideoRewarded(this, null));
 #endif
         }
 
         private const string ACTION_NAME = "rewarded_video";
-        public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+        public void AdmobHandleRewardBasedVideoRewarded(object sender, Reward args)
         {
             switch (rewardType)
             {
@@ -68,10 +66,8 @@ namespace UDEV
         private void OnDestroy()
         {
 #if UNITY_ANDROID || UNITY_IPHONE
-        if (AdmobController.Ins.rewardBasedVideo != null)
-        {
-            AdmobController.Ins.rewardBasedVideo.OnAdRewarded -= HandleRewardBasedVideoRewarded;
-        }
+            AdmobController admobController = AdmobController.Ins;
+            admobController.OnUserEarnedRewardEvent.RemoveListener(() => AdmobHandleRewardBasedVideoRewarded(this, null));
 #endif
         }
     }

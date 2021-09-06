@@ -532,7 +532,7 @@ namespace UDEV
             if (IsActionAvailable("show_ads", ConfigController.Ins.config.adPeriod))
             {
 #if UNITY_ANDROID || UNITY_IPHONE
-            bool result = AdmobController.Ins.ShowInterstitial();
+            bool result = AdmobController.Ins.interstitialAd.IsLoaded();
             if (result) SetActionTime("show_ads");
             else AdmobController.Ins.RequestInterstitial();
 #else

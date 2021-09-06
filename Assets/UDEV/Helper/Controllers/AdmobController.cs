@@ -1,55 +1,82 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using System;
 using GoogleMobileAds.Api;
+using GoogleMobileAds.Common;
+using UnityEngine.Events;
 
 namespace UDEV
 {
     public class AdmobController : Singleton<AdmobController>
     {
-        private BannerView bannerView;
-        public InterstitialAd interstitial;
-        public RewardBasedVideoAd rewardBasedVideo;
         public RewardedVideoCallBack rewardedCallback;
+        public GameConfig config;
+        public BannerView bannerView;
+        public InterstitialAd interstitialAd;
+        public RewardedAd rewardedAd;
 
-        public override void Awake()
-        {
-            base.Awake();
-            rewardedCallback = GetComponent<RewardedVideoCallBack>();
-        }
+        public UnityEvent OnAdLoadedEvent;
+        public UnityEvent OnAdFailedToLoadEvent;
+        public UnityEvent OnAdOpeningEvent;
+        public UnityEvent OnAdFailedToShowEvent;
+        public UnityEvent OnUserEarnedRewardEvent;
+        public UnityEvent OnAdClosedEvent;
+        public bool showFpsMeter = true;
 
-        override public void Start()
+        public override void Start()
         {
             base.Start();
-#if UNITY_EDITOR
+            config = ConfigController.Ins.config;
+            Init();
+        }
 
+        #region Admob
+        public void Init()
+        {
+            MobileAds.SetiOSAppPauseOnBackground(true);
+
+            List<String> deviceIds = new List<String>() { AdRequest.TestDeviceSimulator };
+
+            // Add some test device IDs (replace with your own device IDs).
+#if UNITY_IPHONE
+        deviceIds.Add("96e23e80653bb28980d3f40beb58915c");
 #elif UNITY_ANDROID
-        MobileAds.Initialize(ConfigController.Ins.config.admob.androidAppId);
-#elif UNITY_IPHONE
-        MobileAds.Initialize(ConfigController.Ins.config.admob.iosAppId);
+            deviceIds.Add("75EF8D155528C04DACBBA6F36F433035");
 #endif
+
+            // Configure TagForChildDirectedTreatment and test device IDs.
+            RequestConfiguration requestConfiguration =
+                new RequestConfiguration.Builder()
+                .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.Unspecified)
+                .SetTestDeviceIds(deviceIds).build();
+
+            MobileAds.SetRequestConfiguration(requestConfiguration);
+
+            // Initialize the Google Mobile Ads SDK.
+            MobileAds.Initialize(HandleInitCompleteAction);
             if (!CUtils.IsBuyItem() && !CUtils.IsAdsRemoved())
             {
                 RequestBanner();
                 RequestInterstitial();
+                HideBanner();
             }
 
-            InitRewardedVideo();
-            RequestRewardBasedVideo();
+            RequestRewardedVideo();
+
+
         }
 
-        private void InitRewardedVideo()
+        private void HandleInitCompleteAction(InitializationStatus initstatus)
         {
-            // Get singleton reward based video ad reference.
-            this.rewardBasedVideo = RewardBasedVideoAd.Instance;
+            // Callbacks from GoogleMobileAds are not guaranteed to be called on
+            // main thread.
+            // In this example we use MobileAdsEventExecutor to schedule these calls on
+            // the next Update() loop.
+            MobileAdsEventExecutor.ExecuteInUpdate(() =>
+            {
 
-            // RewardBasedVideoAd is a singleton, so handlers should only be registered once.
-            this.rewardBasedVideo.OnAdLoaded += this.HandleRewardBasedVideoLoaded;
-            this.rewardBasedVideo.OnAdFailedToLoad += this.HandleRewardBasedVideoFailedToLoad;
-            this.rewardBasedVideo.OnAdOpening += this.HandleRewardBasedVideoOpened;
-            this.rewardBasedVideo.OnAdStarted += this.HandleRewardBasedVideoStarted;
-            this.rewardBasedVideo.OnAdRewarded += this.HandleRewardBasedVideoRewarded;
-            this.rewardBasedVideo.OnAdClosed += this.HandleRewardBasedVideoClosed;
-            this.rewardBasedVideo.OnAdLeavingApplication += this.HandleRewardBasedVideoLeftApplication;
+            });
         }
 
         public void RequestBanner()
@@ -58,25 +85,30 @@ namespace UDEV
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = ConfigController.Ins.config.admob.androidBanner.Trim();
+        string adUnitId = config.androidBanner.Trim();
 #elif UNITY_IPHONE
-        string adUnitId = ConfigController.Ins.config.admob.iosBanner.Trim();
+        string adUnitId = config.iosBanner.Trim();
 #else
         string adUnitId = "unexpected_platform";
 #endif
 
-            // Create a 320x50 banner at the top of the screen.
-            this.bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
+            // Clean up banner before reusing
+            if (bannerView != null)
+            {
+                bannerView.Destroy();
+            }
 
-            // Register for ad events.
-            this.bannerView.OnAdLoaded += this.HandleAdLoaded;
-            this.bannerView.OnAdFailedToLoad += this.HandleAdFailedToLoad;
-            this.bannerView.OnAdOpening += this.HandleAdOpened;
-            this.bannerView.OnAdClosed += this.HandleAdClosed;
-            this.bannerView.OnAdLeavingApplication += this.HandleAdLeftApplication;
+            // Create a 320x50 banner at top of the screen
+            bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
 
-            // Load a banner ad.
-            this.bannerView.LoadAd(this.CreateAdRequest());
+            // Add Event Handlers
+            bannerView.OnAdLoaded += (sender, args) => OnAdLoadedEvent.Invoke();
+            bannerView.OnAdFailedToLoad += (sender, args) => OnAdFailedToLoadEvent.Invoke();
+            bannerView.OnAdOpening += (sender, args) => OnAdOpeningEvent.Invoke();
+            bannerView.OnAdClosed += (sender, args) => OnAdClosedEvent.Invoke();
+
+            // Load a banner ad
+            bannerView.LoadAd(CreateAdRequest());
         }
 
         public void RequestInterstitial()
@@ -85,67 +117,115 @@ namespace UDEV
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = ConfigController.Ins.config.admob.androidInterstitial.Trim();
+        string adUnitId = config.androidInterstitial.Trim();
 #elif UNITY_IPHONE
-        string adUnitId = ConfigController.Ins.config.admob.iosInterstitial.Trim();
+        string adUnitId = config.iosInterstitial.Trim();
 #else
         string adUnitId = "unexpected_platform";
 #endif
 
-            // Create an interstitial.
-            this.interstitial = new InterstitialAd(adUnitId);
+            // Clean up interstitial before using it
+            if (interstitialAd != null)
+            {
+                interstitialAd.Destroy();
+            }
 
-            // Register for ad events.
-            this.interstitial.OnAdLoaded += this.HandleInterstitialLoaded;
-            this.interstitial.OnAdFailedToLoad += this.HandleInterstitialFailedToLoad;
-            this.interstitial.OnAdOpening += this.HandleInterstitialOpened;
-            this.interstitial.OnAdClosed += this.HandleInterstitialClosed;
-            this.interstitial.OnAdLeavingApplication += this.HandleInterstitialLeftApplication;
+            interstitialAd = new InterstitialAd(adUnitId);
 
-            // Load an interstitial ad.
-            this.interstitial.LoadAd(this.CreateAdRequest());
+            // Add Event Handlers
+            interstitialAd.OnAdLoaded += (sender, args) => OnAdLoadedEvent.Invoke();
+            interstitialAd.OnAdFailedToLoad += (sender, args) => OnAdFailedToLoadEvent.Invoke();
+            interstitialAd.OnAdOpening += (sender, args) => OnAdOpeningEvent.Invoke();
+            interstitialAd.OnAdClosed += (sender, args) => {
+                OnAdClosedEvent.Invoke();
+
+#if UNITY_EDITOR
+                RequestInterstitial();
+#elif UNITY_ANDROID
+                if (string.Compare(adUnitId, config.androidInterstitial.Trim()) == 0)
+                    RequestInterstitial();
+#elif UNITY_IPHONE
+                if (string.Compare(adUnitId, config.iosInterstitial.Trim()) == 0)
+                    RequestInterstitial();
+#else
+                RequestInterstitial();
+#endif
+            };
+
+            // Load an interstitial ad
+            interstitialAd.LoadAd(CreateAdRequest());
         }
 
-        public void RequestRewardBasedVideo()
+        public void RequestRewardedVideo()
         {
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = ConfigController.Ins.config.admob.androidRewarded.Trim();
+        string adUnitId = config.androidRewarded.Trim();
 #elif UNITY_IPHONE
-        string adUnitId = ConfigController.Ins.config.admob.iosRewarded.Trim();
+        string adUnitId = config.iosRewarded.Trim();
 #else
         string adUnitId = "unexpected_platform";
 #endif
+            if (rewardedAd != null)
+                rewardedAd.Destroy();
 
-            this.rewardBasedVideo.LoadAd(this.CreateAdRequest(), adUnitId);
+            rewardedAd = new RewardedAd(adUnitId);
+
+            // Add Event Handlers
+            rewardedAd.OnAdLoaded += (sender, args) => OnAdLoadedEvent.Invoke();
+            rewardedAd.OnAdFailedToLoad += (sender, args) => OnAdFailedToLoadEvent.Invoke();
+            rewardedAd.OnAdOpening += (sender, args) => OnAdOpeningEvent.Invoke();
+            rewardedAd.OnAdFailedToShow += (sender, args) => OnAdFailedToShowEvent.Invoke();
+            rewardedAd.OnAdClosed += (sender, args) => OnAdClosedEvent.Invoke();
+            rewardedAd.OnUserEarnedReward += (sender, args) => OnUserEarnedRewardEvent.Invoke();
+            OnAdClosedEvent.AddListener(() => {
+#if UNITY_EDITOR
+                RequestInterstitial();
+                RequestRewardedVideo();
+#elif UNITY_ANDROID
+                if (string.Compare(adUnitId, config.androidRewarded.Trim()) == 0)
+                    RequestRewardedVideo();
+                else if (string.Compare(adUnitId, config.androidInterstitial.Trim()) == 0)
+                    RequestInterstitial();
+#elif UNITY_IPHONE
+                if (string.Compare(adUnitId, config.iosRewarded.Trim()) == 0)
+                    RequestRewardedVideo();
+                else if (string.Compare(adUnitId, config.iosInterstitial.Trim()) == 0)
+                    RequestInterstitial();
+#else
+                RequestRewardedVideo();
+#endif
+            });
+
+            // Create empty ad request
+            rewardedAd.LoadAd(CreateAdRequest());
+
         }
 
         // Returns an ad request with custom ad targeting.
         private AdRequest CreateAdRequest()
         {
             return new AdRequest.Builder()
-                    .AddTestDevice(AdRequest.TestDeviceSimulator)
-                    .AddTestDevice("0123456789ABCDEF0123456789ABCDEF")
-                    .AddKeyword("game")
-                    .TagForChildDirectedTreatment(false)
-                    .AddExtra("color_bg", "9B30FF")
                     .Build();
         }
 
-        public void ShowInterstitial(InterstitialAd ad)
+        public void ShowInterstitial()
         {
-            if (ad != null && ad.IsLoaded())
+            if (CUtils.IsBuyItem()) return;
+
+            if (interstitialAd != null && interstitialAd.IsLoaded())
             {
-                ad.Show();
+                interstitialAd.Show();
             }
         }
 
-        public void ShowBanner()
+        public void ShowBanner(int pos = (int)AdPosition.Bottom)
         {
-            if (CUtils.IsBuyItem()) return;
+            if (CUtils.IsBuyItem() && CUtils.IsAdsRemoved()) return;
             if (bannerView != null)
             {
+                bannerView.SetPosition((AdPosition)pos);
                 bannerView.Show();
             }
         }
@@ -160,127 +240,34 @@ namespace UDEV
 
         public bool ShowInterstitial(bool video = false)
         {
-            if (interstitial != null && interstitial.IsLoaded())
+            if (CUtils.IsBuyItem()) return false;
+            if (interstitialAd != null && interstitialAd.IsLoaded())
             {
-                interstitial.Show();
+                interstitialAd.Show();
                 return true;
             }
             return false;
         }
 
-        public void ShowRewardBasedVideo()
+        public void ShowRewardedVideo()
         {
-            if (this.rewardBasedVideo.IsLoaded())
+            if (rewardedAd != null)
             {
-                this.rewardBasedVideo.Show();
+                rewardedAd.Show();
             }
             else
             {
-                MonoBehaviour.print("Reward based video ad is not ready yet");
+                RequestRewardedVideo();
             }
         }
 
-        #region Banner callback handlers
-
-        public void HandleAdLoaded(object sender, EventArgs args)
+        public bool IsRewardedVideoAvaiable()
         {
-            print("HandleAdLoaded event received.");
+            if (rewardedAd == null) return false;
+            bool isLoaded = rewardedAd.IsLoaded();
+            return isLoaded;
         }
 
-        public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-        {
-            print("HandleFailedToReceiveAd event received with message: " + args.Message);
-        }
-
-        public void HandleAdOpened(object sender, EventArgs args)
-        {
-            print("HandleAdOpened event received");
-        }
-
-        public void HandleAdClosed(object sender, EventArgs args)
-        {
-            print("HandleAdClosed event received");
-        }
-
-        public void HandleAdLeftApplication(object sender, EventArgs args)
-        {
-            print("HandleAdLeftApplication event received");
-        }
-
-        #endregion
-
-        #region Interstitial callback handlers
-
-        public void HandleInterstitialLoaded(object sender, EventArgs args)
-        {
-            print("HandleInterstitialLoaded event received.");
-        }
-
-        public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-        {
-            print("HandleInterstitialFailedToLoad event received with message: " + args.Message);
-        }
-
-        public void HandleInterstitialOpened(object sender, EventArgs args)
-        {
-            print("HandleInterstitialOpened event received");
-        }
-
-        public void HandleInterstitialClosed(object sender, EventArgs args)
-        {
-            print("HandleInterstitialClosed event received");
-            RequestInterstitial();
-        }
-
-        public void HandleInterstitialLeftApplication(object sender, EventArgs args)
-        {
-            print("HandleInterstitialLeftApplication event received");
-        }
-
-        #endregion
-
-        #region RewardBasedVideo callback handlers
-
-        public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
-        {
-            MonoBehaviour.print("HandleRewardBasedVideoLoaded event received");
-        }
-
-        public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-        {
-            MonoBehaviour.print(
-                "HandleRewardBasedVideoFailedToLoad event received with message: " + args.Message);
-        }
-
-        public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
-        {
-            MonoBehaviour.print("HandleRewardBasedVideoOpened event received");
-        }
-
-        public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
-        {
-            MonoBehaviour.print("HandleRewardBasedVideoStarted event received");
-        }
-
-        public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
-        {
-            RequestRewardBasedVideo();
-            MonoBehaviour.print("HandleRewardBasedVideoClosed event received");
-        }
-
-        public void HandleRewardBasedVideoRewarded(object sender, Reward args)
-        {
-            string type = args.Type;
-            double amount = args.Amount;
-            MonoBehaviour.print(
-                "HandleRewardBasedVideoRewarded event received for " + amount.ToString() + " " + type);
-        }
-
-        public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)
-        {
-            MonoBehaviour.print("HandleRewardBasedVideoLeftApplication event received");
-        }
-
-        #endregion
+        #endregion;
     }
 }
